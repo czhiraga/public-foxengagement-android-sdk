@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    compile 'co.cyberz.fox:engagement:1.0.0'
+    compile 'co.cyberz.fox:engagement-sdk:1.0.0'
 }
 ```
 
