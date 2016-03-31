@@ -23,10 +23,29 @@
 
 ### 1.1 入手
 
-* SDK本体を[こちら](https://github.com/cyber-z/public-foxengagement-android-sdk/releases)よりダウンロードしてください。
-* ダウンロードしたSDKを展開し、jarファイルをアプリケーションのプロジェクトに組み込んでください。
+> [SDKダウンロード](https://github.com/cyber-z/public-foxengagement-android-sdk/releases)
 
-### 1.2 GooglePlayServicesの導入
+直接jarファイルをプロジェクトに組み込む際には、SDK本体を[ダウンロード](https://github.com/cyber-z/public-foxengagement-android-sdk/releases)してください。
+ダウンロードしたSDKを展開し、jarファイルをアプリケーションのプロジェクトに組み込んでください。
+
+### 1.2 Gradleによる導入
+
+Android StudioプロジェクトにてGradleを使用し導入する場合は以下の手順を行います。<br>
+`build.gradle`に下記設定を適切な箇所に追加します。
+
+```
+repositories {
+    maven {
+        url "https://github.com/cyber-z/public-foxengagement-android-sdk/raw/master/mavenRepo"
+    }
+}
+
+dependencies {
+    compile 'co.cyberz.fox:engagement:1.0.0'
+}
+```
+
+### 1.3 GooglePlayServicesの導入
 
 本SDKの組み込みにはlibsの`FOX_Engagement_Android_SDK_<version>.jar`と別途`GooglePlayServices`が必須となります。<br>
 組み込み対象のアプリにはGooglePlayServicesをご導入の上、AdvertisingIDを取得出来る状態が必須となっております。
@@ -52,7 +71,7 @@ compile 'com.google.android.gms:play-services-ads:8.3.0'
 ```
 > 詳細は[Goolge Developers](https://developers.google.com/android/guides/setup)をご確認ください。
 
-### 1.3 AndroidManifest.xmlの設定
+### 1.4 AndroidManifest.xmlの設定
 
 **[パーミッションの設定]**
 
